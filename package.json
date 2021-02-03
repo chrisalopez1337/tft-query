@@ -1,0 +1,25 @@
+{
+  "name": "tft-query",
+  "version": "0.0.1",
+  "description": "A tool to interact with Riot's TFT API",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisalopez1337/tft-query.git"
+  },
+  "keywords": [
+    "TFT",
+    "Riot",
+    "Games",
+    "API"
+  ],
+  "author": "Chris Lopez (chrisalopez1337)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisalopez1337/tft-query/issues"
+  },
+  "homepage": "https://github.com/chrisalopez1337/tft-query#readme"
+}
