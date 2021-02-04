@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test-redis": "mocha tests/cache/redis.js",
-    "test-request-client" : "mocha tests/request-client/index.js"
+    "test-request-client": "mocha tests/request-client/index.js",
+    "test-paths-summoners": "mocha tests/paths/summoners.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
     "redis": "^3.0.2"
   }
 }
