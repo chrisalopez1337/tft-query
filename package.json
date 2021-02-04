@@ -4,7 +4,7 @@
   "description": "A tool to interact with Riot's TFT API",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-redis": "mocha tests/cache/redis.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/chrisalopez1337/tft-query/issues"
   },
-  "homepage": "https://github.com/chrisalopez1337/tft-query#readme"
+  "homepage": "https://github.com/chrisalopez1337/tft-query#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  },
+  "dependencies": {
+    "redis": "^3.0.2"
+  }
 }
