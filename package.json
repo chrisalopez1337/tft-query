@@ -6,7 +6,8 @@
   "scripts": {
     "test-redis": "mocha tests/cache/redis.js",
     "test-request-client": "mocha tests/request-client/index.js",
-    "test-paths-summoners": "mocha tests/paths/summoners.js"
+    "test-paths-summoners": "mocha tests/paths/summoners.js",
+    "test-paths-matchs" : "mocha tests/paths/matchs.js"
   },
   "repository": {
     "type": "git",
