@@ -11,7 +11,9 @@ describe('Main Request Client: TftQuery', async () => {
         puuid: 'vy9iRyl4SENb_sop5qRwuCmHqcV_YU1OKss9E8sbnLzNjA956jwHHfMvnBCx9DdCsSD6IK-gIrAj9g',
         summonerId: 'IFg_bFm3i52CJVxBvKBuqQmmZ_SqEq52nnInd-PAtfw',
         matchId: 'NA1_3787021738',
-        leagueId: '175c4fd7-5a8f-4006-a2b4-230013c913b6'
+        leagueId: '175c4fd7-5a8f-4006-a2b4-230013c913b6',
+        tier: 'DIAMOND',
+        division: 'I'
     }
     
     const client = new TftQuery('NA', payload, apiKey, false, false);
@@ -91,5 +93,13 @@ describe('Main Request Client: TftQuery', async () => {
         const path = `https://na1.api.riotgames.com/tft/league/v1/leagues/175c4fd7-5a8f-4006-a2b4-230013c913b6?api_key=${apiKey}`;
         const { data } = await axios.get(path);
         assert.deepEqual(data.name, actual.name);
+    })
+
+    it('Should return valid data: getLeagueByTierAndDivision', async () => {
+        const actual = await client.getLeagueByTierAndDivision();
+        const path = `https://na1.api.riotgames.com/tft/league/v1/entries/DIAMOND/I?page=1&api_key=${apiKey}`;
+        const { data } = await axios.get(path);
+        // This test is near impossible due to the timing.
+        assert.deepEqual(data, actual);
     })
 })
