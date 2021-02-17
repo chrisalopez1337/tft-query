@@ -1,6 +1,6 @@
 {
   "name": "tft-query",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A tool to interact with Riot's TFT API",
   "main": "lib/index.js",
   "scripts": {
