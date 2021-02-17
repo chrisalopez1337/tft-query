@@ -4,7 +4,7 @@ An interface to interact with Riot's TFT Api. Supports native redis caching.
 ## How to install: `npm i tft-query`
 
 ## Contributing
-This library is under heaby development and currently I am the only one maintaing the project. Feel free to submit a PR on any bug fixes, logic clean up, or additions to the library. There are currently no main action items but I will add some shortly.
+This library is under heavy development and currently I am the only one maintaing the project. Feel free to submit a PR on any bug fixes, logic clean up, or additions to the library. There are currently no main action items but I will add some shortly.
 
 ## Basic start
 ```javascript
