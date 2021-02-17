@@ -41,4 +41,11 @@ describe('Main Request Client: TftQuery', async () => {
         const { data } = await axios.get(path);
         assert.deepEqual(data, actual);
     })
+
+    it('Should return valid data: getMatchByPuuidAndCount', async () => {
+        const actual = await client.getMatchByPuuidAndCount();
+        const path = `https://americas.api.riotgames.com/tft/match/v1/matches/by-puuid/vy9iRyl4SENb_sop5qRwuCmHqcV_YU1OKss9E8sbnLzNjA956jwHHfMvnBCx9DdCsSD6IK-gIrAj9g/ids?count=20&api_key=${apiKey}`;
+        const { data } = await axios.get(path);
+        assert.deepEqual(data, actual);
+    })
 })
