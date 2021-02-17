@@ -62,5 +62,19 @@ describe('Main Request Client: TftQuery', async () => {
         const path = `https://na1.api.riotgames.com/tft/league/v1/challenger?api_key=${apiKey}`;
         const { data } = await axios.get(path);
         assert.deepEqual(data.name, actual.name);
-    })
+    });
+
+    it('Should return valid data: getMasterLeague', async () => {
+        const actual = await client.getMasterLeague();
+        const path = `https://na1.api.riotgames.com/tft/league/v1/master?api_key=${apiKey}`;
+        const { data } = await axios.get(path);
+        assert.deepEqual(data.name, actual.name);
+    });
+
+    it('Should return valid data: getGrandmasterLeague', async () => {
+        const actual = await client.getGrandMasterLeague();
+        const path = `https://na1.api.riotgames.com/tft/league/v1/grandmaster?api_key=${apiKey}`;
+        const { data } = await axios.get(path);
+        assert.deepEqual(data.name, actual.name);
+    });
 })
