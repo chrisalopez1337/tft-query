@@ -207,3 +207,71 @@ These are in line with the TFT API documentation.
         summonerLevel /* <Integer> */
     }
 ```
+
+# Match Route Methods
+These are all in line with the Riot TFT API routes.
+
+### `getMatchByPuuidAndCount()`
+#### Required in payload: `puuid: <String>`
+#### Optional in payload: `count: <Integer>, default is 20`
+#### Example Query
+```javascript
+    const payload = { puuid: 'yourPuuid', count: 15 };
+    const config = { region, payload, apiKey, useReids, redisConfig };
+    const tftQuery = new TftQuery(config);
+    
+    const asyncFunc = async () => {
+        try {
+            const response = await tftQuery.getMatchByPuuidAndCount();
+            // Do something with response...
+        } catch(err) {
+            throw new Error(err);
+        }
+    } 
+```
+#### Example Response
+```javascript
+    [
+        "NA1_3787021738",
+        "NA1_3782875544",
+        "NA1_3782808963",
+        ...
+    ]
+```
+
+### `getMatchByMatchId()`
+#### Required in payload: `matchId: <String>`
+#### Example Query
+```javascript
+    const payload = { matchId: 'yourMatchId' };
+    const config = { region, payload, apiKey, useReids, redisConfig };
+    const tftQuery = new TftQuery(config);
+    
+    const asyncFunc = async () => {
+        try {
+            const response = await tftQuery.getMatchByMatchId();
+            // Do something with response...
+        } catch(err) {
+            throw new Error(err);
+        }
+    } 
+```
+#### Example Response
+```javascript
+    {
+        metadata: {
+            data_version, /* <String> */
+            match_id, /* <String> */
+            participants, /* <Array>:<String> */
+        },
+        info: {
+            game_datetime, /* <Integer> */
+            game_length, /* <Integer> */
+            game_version, /* <String> */
+            participants, /* <Array>:<Object> */
+            queue_id, /* <Integer> */
+            tft_mode, /* <String> */
+            tft_set_number, /* <Integer> */
+        }
+    }
+```
