@@ -108,9 +108,9 @@ describe('Main Request Client: TftQuery', async () => {
         assert.deepEqual(data.name, actual.name);
     })
 
-    it('Should return a batch of data: getBatchOfMatchInfo', async () => {
-        const actual = await client.getBatchOfMatchInfo();
-        // This test is near impossible due to timing, looking for a fix as well.
+
+    it('Should return a batch of data: getAllInfoBySummonerName', async () => {
+        const actual = await client.getAllInfoBySummonerName();
         console.log(actual);
-    });
+    })
 })
