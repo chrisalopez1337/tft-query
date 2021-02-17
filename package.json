@@ -8,7 +8,8 @@
     "test-request-client": "mocha tests/request-client/index.js",
     "test-paths-summoners": "mocha tests/paths/summoners.js",
     "test-paths-matchs" : "mocha tests/paths/matchs.js",
-    "test-paths-leagues": "mocha tests/paths/leagues.js"
+    "test-paths-leagues" : "mocha tests/paths/leagues.js",
+    "test-main" : "mocha tests/main/index.js"
   },
   "repository": {
     "type": "git",
