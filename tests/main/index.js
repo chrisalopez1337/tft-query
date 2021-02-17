@@ -11,9 +11,10 @@ describe('Main Request Client: TftQuery', async () => {
         puuid: 'vy9iRyl4SENb_sop5qRwuCmHqcV_YU1OKss9E8sbnLzNjA956jwHHfMvnBCx9DdCsSD6IK-gIrAj9g',
         summonerId: 'IFg_bFm3i52CJVxBvKBuqQmmZ_SqEq52nnInd-PAtfw',
         matchId: 'NA1_3787021738',
+        leagueId: '175c4fd7-5a8f-4006-a2b4-230013c913b6'
     }
     
-    const client = new TftQuery('NA', payload, apiKey, true, false);
+    const client = new TftQuery('NA', payload, apiKey, false, false);
 
     it('Should return valid data: getSummonerBySummonerName', async () => {
         const actual = await client.getSummonerBySummonerName();
@@ -77,4 +78,18 @@ describe('Main Request Client: TftQuery', async () => {
         const { data } = await axios.get(path);
         assert.deepEqual(data.name, actual.name);
     });
+
+    it('Should return valid data: getLeagueBySummonerId', async () => {
+        const actual = await client.getLeagueBySummonerId();
+        const path = `https://na1.api.riotgames.com/tft/league/v1/entries/by-summoner/IFg_bFm3i52CJVxBvKBuqQmmZ_SqEq52nnInd-PAtfw?api_key=${apiKey}`;
+        const { data } = await axios.get(path);
+        assert.deepEqual(data, actual);
+    })
+
+    it('Should return valid data: getLeaugeByLeagueId', async () => {
+        const actual = await client.getLeagueByLeagueId();
+        const path = `https://na1.api.riotgames.com/tft/league/v1/leagues/175c4fd7-5a8f-4006-a2b4-230013c913b6?api_key=${apiKey}`;
+        const { data } = await axios.get(path);
+        assert.deepEqual(data.name, actual.name);
+    })
 })
