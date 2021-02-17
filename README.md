@@ -85,7 +85,7 @@ This is where you can pass your custom redis config. By default it will be:
     }
 ```
 
-## Summoner Routes
+# Summoner Route Methods
 These are in line with the TFT API documentation.
 
 ### `getSummonerBySummonerName()`
@@ -118,3 +118,92 @@ These are in line with the TFT API documentation.
     }
 ```
 
+### `getSummonerByAccountId()`
+#### Required in payload: `accountId: <String>`
+#### Example Query
+```javascript
+    const payload = { accountId: 'yourAccountId' };
+    const config = { region, payload, apiKey, useReids, redisConfig };
+    const tftQuery = new TftQuery(config);
+    
+    const asyncFunc = async () => {
+        try {
+            const response = await tftQuery.getSummonerByAccountId();
+            // Do something with response...
+        } catch(err) {
+            throw new Error(err);
+        }
+    } 
+```
+#### Example Response
+```javascript
+    {
+        id, /* <String> */
+        accountId, /* <String> */
+        puuid, /* <String> */
+        name, /* <String> */
+        profileIconId, /* <Integer> */
+        revisionDate, /* <Date> */
+        summonerLevel /* <Integer> */
+    }
+```
+
+### `getSummonerByPuuid()`
+#### Required in payload: `puuid: <String>`
+#### Example Query
+```javascript
+    const payload = { puuid: 'yourPuuid' };
+    const config = { region, payload, apiKey, useReids, redisConfig };
+    const tftQuery = new TftQuery(config);
+    
+    const asyncFunc = async () => {
+        try {
+            const response = await tftQuery.getSummonerByPuuid();
+            // Do something with response...
+        } catch(err) {
+            throw new Error(err);
+        }
+    } 
+```
+#### Example Response
+```javascript
+    {
+        id, /* <String> */
+        accountId, /* <String> */
+        puuid, /* <String> */
+        name, /* <String> */
+        profileIconId, /* <Integer> */
+        revisionDate, /* <Date> */
+        summonerLevel /* <Integer> */
+    }
+```
+
+### `getSummonerBySummonerId()`
+#### Required in payload: `summonerId: <String>`
+#### Example Query
+```javascript
+    const payload = { summonerId: 'yourSummonerId' };
+    const config = { region, payload, apiKey, useReids, redisConfig };
+    const tftQuery = new TftQuery(config);
+    
+    const asyncFunc = async () => {
+        try {
+            const response = await tftQuery.getSummonerBySummonerId();
+            // Do something with response...
+        } catch(err) {
+            throw new Error(err);
+        }
+    } 
+```
+#### Example Response
+```javascript
+    {
+        id, /* <String> */
+        accountId, /* <String> */
+        puuid, /* <String> */
+        name, /* <String> */
+        profileIconId, /* <Integer> */
+        revisionDate, /* <Date> */
+        summonerLevel /* <Integer> */
+    }
+```
