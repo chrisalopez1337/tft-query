@@ -20,8 +20,16 @@ describe('Main Request Client: TftQuery', async () => {
         division: 'I',
         matchIds: batch,
     }
+
+    const config = {
+        region: 'NA',
+        payload,
+        apiKey,
+        useRedis: false,
+        redisConfig: false,
+    }
     
-    const client = new TftQuery('NA', payload, apiKey, false, false);
+    const client = new TftQuery(config);
 
     it('Should return valid data: getSummonerBySummonerName', async () => {
         const actual = await client.getSummonerBySummonerName();
